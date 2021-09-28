@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <div>
+                <img src="{% static 'media/Full-Logo.svg' %}" alt="">
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="name">
+                Никита
+            </div>
+            <div class="mini-img">
+                <img src="{% static 'media/iK8p8hir9ZI.jpg' %}" alt="">
+            </div>
+            <div class="chevron">
+                <button onclick="showDropDown()" class="dropbtn"><img src="{% static 'media/chevron.svg' %}" alt=""></button>
+            </div>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="#">Ссылка 1</a>
+                <a href="#">Ссылка 2</a>
+                <a href="#">Ссылка 3</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="{% static 'scripts/main.js' %}"></script>
+</body>
+</html>
